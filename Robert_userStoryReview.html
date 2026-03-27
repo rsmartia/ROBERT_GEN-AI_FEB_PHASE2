@@ -1,0 +1,119 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Story Quality Review – Employee Profile (Self)</title>
+    <style>
+        body {font-family: Arial, sans-serif; margin: 20px; line-height: 1.5;}
+        table {border-collapse: collapse; width: 100%; max-width: 800px;}
+        th, td {border: 1px solid #ccc; padding: 8px; text-align: left;}
+        th {background-color: #f2f2f2;}
+        h2 {color: #2E5C6E;}
+        .score {font-weight: bold; font-size: 1.2em;}
+        .improvement {margin-top: 20px;}
+        .improvement ul {margin-left: 20px;}
+    </style>
+</head>
+<body>
+
+<h2>User Story Quality Review – Employee Profile (Self)</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description (Current State)</th>
+            <th>Score (out of 20)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Clarity</td>
+            <td>
+                The wording “I want to employee profile employee self” is ambiguous. It is unclear who the actor is (e.g., staff member, HR admin), what “employee profile” entails, and what “self” means in this context.
+            </td>
+            <td class="score">8</td>
+        </tr>
+        <tr>
+            <td>Completeness</td>
+            <td>
+                No acceptance criteria, pre‑conditions, or definition of “done” are provided. Critical details such as required fields, validation rules, security constraints, and integration points are missing.
+            </td>
+            <td class="score">5</td>
+        </tr>
+        <tr>
+            <td>Business Value Alignment</td>
+            <td>
+                The story hints at a self‑service employee profile feature, which can improve data accuracy and reduce HR overhead, but the link to concrete healthcare outcomes (e.g., compliance, auditability, patient safety) is not articulated.
+            </td>
+            <td class="score">12</td>
+        </tr>
+        <tr>
+            <td>Testability</td>
+            <td>
+                Without explicit acceptance criteria or success metrics, QA cannot derive deterministic test cases. Edge cases (e.g., role‑based access, HIPAA audit logs) are not mentioned.
+            </td>
+            <td class="score">7</td>
+        </tr>
+        <tr>
+            <td>Technical Feasibility</td>
+            <td>
+                The concept of a self‑service profile is technically feasible within most EHR/HRIS platforms, but the story lacks constraints (e.g., integration with LDAP, encryption standards) that could affect implementation risk.
+            </td>
+            <td class="score">13</td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="score">Overall Score: <strong>45 / 100</strong></p>
+
+<div class="improvement">
+    <h3>Improvement Recommendations</h3>
+    <ul>
+        <li><strong>Clarity</strong>
+            <ul>
+                <li>Rewrite the “As a … I want … so that …” sentence to identify the precise actor (e.g., “As a hospital employee, I want to view and edit my personal profile …”).</li>
+                <li>Define what “profile” includes (contact info, credentials, certifications, emergency contacts, etc.).</li>
+                <li>Explain “self” – is it a self‑service portal, mobile app, or integrated EHR screen?</li>
+            </ul>
+        </li>
+        <li><strong>Completeness</strong>
+            <ul>
+                <li>Provide concrete acceptance criteria, for example:
+                    <ul>
+                        <li>Employee can view current profile data after successful authentication.</li>
+                        <li>Employee can edit allowed fields (e.g., phone, address) and submit changes.</li>
+                        <li>System validates mandatory fields and displays inline error messages.</li>
+                        <li>All changes are logged with user ID, timestamp, and IP address for audit compliance (HIPAA/POPIA).</li>
+                        <li>Updates are persisted within 5 seconds and reflected in downstream HRIS.</li>
+                    </ul>
+                </li>
+                <li>Specify pre‑conditions (e.g., employee must have an active user account, MFA enabled).</li>
+                <li>Define “Definition of Done” – code reviewed, unit tests ≥80 % coverage, security review completed, documentation updated.</li>
+            </ul>
+        </li>
+        <li><strong>Business Value Alignment</strong>
+            <ul>
+                <li>Link the feature to measurable outcomes: reduction in HR ticket volume, improved data accuracy for credential verification, compliance with regulatory audit requirements.</li>
+                <li>State how the capability supports patient safety (e.g., up‑to‑date staff certifications are visible to clinical supervisors).</li>
+            </ul>
+        </li>
+        <li><strong>Testability</strong>
+            <ul>
+                <li>Derive test cases from the acceptance criteria (positive flow, negative validation, security/authorization checks, performance of data sync).</li>
+                <li>Include non‑functional tests: accessibility (WCAG 2.1), load (concurrent users), and security (penetration test for profile data exposure).</li>
+            </ul>
+        </li>
+        <li><strong>Technical Feasibility</strong>
+            <ul>
+                <li>Identify integration points (e.g., LDAP/Active Directory for authentication, existing HRIS API for persistence).</li>
+                <li>Specify required security controls: TLS 1.2+, encryption at rest, role‑based access control, audit logging per HIPAA.</li>
+                <li>Assess any constraints such as legacy EHR modules that may need custom adapters.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
