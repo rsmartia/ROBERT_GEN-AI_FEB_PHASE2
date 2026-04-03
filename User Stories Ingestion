@@ -1,0 +1,24 @@
+ ⚡ Processing Rate: 13.2 user stories/second
+[0]    📝 Total User Stories: 190
+[0] [user-stories]    ⏱️  Total Time: 14s
+[0]    ⚡ Processing Rate: 13.2 user stories/second
+[0] [user-stories]    ⏱️  Total Time: 14s
+[0]    ⚡ Processing Rate: 13.2 user stories/second
+[0]    📝 Total User Stories: 190
+[0] [user-stories]    ⏱️  Total Time: 14s
+[0]    ⚡ Processing Rate: 13.2 user stories/second
+[0]    📝 Total User Stories: 190
+[0]    ⚡ Processing Rate: 13.2 user stories/second
+[0]    📝 Total User Stories: 190
+[0]    📝 Total User Stories: 190
+[0]    ✅ Successfully Processed: 190
+[0]    ❌ Failed: 0
+[0]    📈 Success Rate: 100.0%
+[0]    💰 Total Cost: $0.003068
+[0]
+[0] [user-stories]    🔢 Total Tokens: 30,678
+[0]    📊 Average Cost per User Story: $0.00001615
+[0]    📊 Average Tokens per User Story: 161
+[0]    💡 Cost Savings: ~90% cheaper than OpenAI embeddings
+[0]
+[0] ✅ Batch script completed successfully!
